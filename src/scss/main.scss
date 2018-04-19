@@ -1,5 +1,8 @@
+
 @import 'reset';
 @import 'mixins';
+@import 'animations';
+
 
 .container {
 	& span {
@@ -9,9 +12,20 @@
 		background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../images/hero-banner.jpg) no-repeat;
 		background-size: cover;
 
+
+
 		@include desktop {
 			height: 900px;
 		}
+
+		@include tablet {
+			height: 900px;
+		}
+
+		@include mobile {
+			height: 900px;
+		}
+
 
 		.header, .nav ul, .social {
 			display: flex;
@@ -101,6 +115,10 @@
                   		@include desktop {
                   			font-size: 92px;
                   		}
+
+                  		@include tablet {
+                  			font-size: 80px;
+                  		}
                   	}
 
                   	& span {
@@ -152,37 +170,42 @@
 
 .arts-of-cakes {
 	display: flex;
-	justify-content: center;
-	margin: 75px 0 0 30px;
+    justify-content: center;
+	margin: 75px 0 0 0;
 
 	.cakes-dscr {
 		& h2 {
 			font-family: 'Alegreya';
 			font-weight: bold;
 			text-align: center;
-			@include desktop {
-				font-size: 45px;
+		@include desktop {
+			font-size: 45px;
+			}
+
+			@include tablet {
+				font-size: 40px;
 			}
           }//h2
 
           .memories {
           	text-align: center;
           	font-family: 'Alegreya';
-          	text-transform: uppercase;
+            text-transform: uppercase;
           	font-weight: bold;
           	color: #a47d5e;
-          	margin-top: 15px;
+            margin-top: 15px;
           }
 
-          & p {
-          	margin-top: 50px;
+         & p {
+            margin-top: 50px;
           	font-family: 'Playfair Display';
           	font-weight: bold;
           	color: #56534c;
           	text-align: center;
           	line-height: 25px;
+          	
           	@include desktop {
-          		width: 490px;
+          		width: 400px;
           	}
 	}//p
 
@@ -194,7 +217,7 @@
 		@include desktop {
 			font-size: 24px;
 		}
-	    }//.chef-cook
+	}//.chef-cook
 
 	    .cook-image {
 	    	display: flex;
@@ -224,16 +247,20 @@
 	    }//.cook-image
 	}//.cakes-dscr
 
-	.weird-text {
-		margin: 30px 0 0 45px;
-	}
-
 	.cakes-imgs {
-		margin-left: 75px;
 		height: 100%;
+		display: -ms-grid;
 		display: grid;
+		-ms-grid-columns: 1fr 1fr;
+		-ms-grid-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 15px;
+		
+		& img {
+			width: 29vw;
+			max-width: 300px;
+			min-width: 280px;
+		}
 
 		.good-taste {
 			background: url(../images/Vektor.png) no-repeat;
@@ -259,7 +286,7 @@
 
 
                  .cooking-time {
-                 	margin: -124px 0 0 320px;
+                 	margin: -124px 0 0 280px;
                  	position: absolute;
                  }
 
@@ -299,16 +326,34 @@
 		margin-top: 75px;
 		height: 760px;
 
+
+
 		.slider {
 			display: flex;
 			justify-content: center;
-			width: 965px;
 			margin: auto;
 
-			.pancake {
+			@include desktop {
+				width: 965px;
+			}
+
+		    .pancake {
 				background: url(../images/pancake.png) left top;
-				width: 420px;
-				height: 510px;
+				
+				
+				@include desktop {
+					width: 420px;
+				    height: 510px;
+				}
+				@include tablet {
+					width: 320px;
+					
+				}
+
+				@include mobile {
+					width: 320px;
+				    height: 410px;
+				}
 
 			}
 			.pancake-dscr {
@@ -347,7 +392,7 @@
 				}
 
 				.slider-imgs {
-					margin: 100px 0 0 30px;
+					margin: 100px 0 55px 30px;
 				}
 			}
 	}//.slider
@@ -362,9 +407,8 @@
                   	font-family: 'Alegreya';
                   	display: flex;
                   	justify-content: center;
-	//padding-top: 95px;
-	text-align: center;
-	height: 760px;
+	              	text-align: center;
+	                height: 760px;
 
 	& h3  {
 		color: #fff;
@@ -422,7 +466,6 @@
 			font-weight: bold;
 			margin-top:  75px;
 			color: #56534c;
-
 		}
 
 		.read-more {
@@ -454,9 +497,11 @@
              		justify-content: center;
              		margin-left: 100px;
              	}
+
              	.recipe-list:nth-child(n+2) {
              		margin-top: 40px;
              	}
+
              	.list {
              		text-align: center;
              		width: 290px;
@@ -473,6 +518,7 @@
              			line-height: 20px;
              		}
 	}//.list
+
 	.jibarito {
 		text-align: center;
 		padding-top: 15px;
@@ -494,20 +540,24 @@
 	}//.jibarito
 	.descr {
 		background: url(../images/sandwich2.jpg) no-repeat;
-		display: flex;
-		justify-content: flex-end;
 		width: 840px;
 		height: 550px;
 		margin-top: 75px;
 
 		.descr-wrapper {
 			margin-right: 10px;
+			display: flex;
+		    align-items: flex-end;
+		    flex-direction: column;
+		}
+
+		.cook {
+			margin-top: -30px;
 		}
 
 		.prep {
 			height: 200px;
 			width: 200px;
-			margin-top: -20px;
 			font-family: 'Alegreya';
 			font-weight: bold;
 			display: flex;
@@ -517,6 +567,7 @@
 			background: #fff;
 			opacity: .5;
 			margin-bottom: 2px;
+			box-shadow: 1px 10px 100px #9a9a9a;
 
 			.prep-time {
 				text-transform: uppercase;
@@ -536,14 +587,13 @@
 				color: #8c8c8c;
 			}
 
-
 	}//.prep
 	.full-recipe {
 		position: absolute;
 		height: 60px;
 		width: 170px;
 		text-transform: uppercase;
-		margin: -65px 0 0 -660px;
+		margin: -55px 0 0 -30px;
 		font-weight: bold;
 		font-size: 18px;
 		color: #dfc691;
@@ -570,7 +620,7 @@
 			align-items: center;
 			justify-content: space-around;
 			height: 70px;
-			width: 515px;
+			width: 27vw;
 			border-top: 1px solid #000;
 			border-bottom: 1px solid #000;
 			font-size: 14px;
@@ -582,10 +632,10 @@
 			}
 		}
 
-
 	}//.nav-footer
 	.nav-footer-one {
 		margin-left: 70px;
 	}
+
 }//.footer
 }//.container
