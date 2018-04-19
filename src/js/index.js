@@ -10,10 +10,21 @@ $(document).ready(function(){
 		height: 'toggle'
     }, 600);
 
-	$('.intro-content').animate({
+	/*$('.intro-content').animate({
 		width: 'toggle'
-	}, 'slow');
+	}, 'slow');*/
+    $('.intro-content h1').animate({
+    	width: 'toggle'
+    }, 900);
+    $('.intro-content p').animate({
+    	width: 'toggle',
 
+    }, 1300);
+
+    $('.intro-content button').animate({
+    	width: 'toggle'
+    }, 1400);	
+    
 	$("cakes-imgs").css({"left":"2000px"}).animate({
 		"left":"0px"
 	}, "slow");

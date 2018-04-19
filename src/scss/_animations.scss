@@ -21,7 +21,13 @@
 	display: none;
 }
 .intro-content {
-	display: none;
+	& h1, button, p {
+		display: none;
+	}
+
+	//.intro-span {
+	//	display: none;
+	//}
 }
 
 
